@@ -1,14 +1,14 @@
-Heroku buildpack: audiowaveform and lame
+Heroku buildpack: audiowaveform
 =======================
 
 
-This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for using audiowaveform and lame in your project.  
+This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) for using audiowaveform in core.
 It doesn't do anything else, so to actually compile your app you should use [heroku-buildpack-multi](https://github.com/ddollar/heroku-buildpack-multi) to combine it with a real buildpack.
 
 Lineage
 -------
 
-Shamelessly forked from the [ffmpeg heroku buildpack](https://github.com/shunjikonishi/heroku-buildpack-ffmpeg) by [Shunji Konishi](https://github.com/shunjikonishi).
+Shamelessly forked from the [audiowaveform heroku buildpack](https://github.com/Mattchewone/heroku-buildpack-audiowaveform) by [Matt Chaffe](https://github.com/Mattchewone).
 
 Usage
 -----
@@ -17,9 +17,9 @@ To use this buildpack, you should prepare a .buildpacks file that contains this 
     $ ls
     .buildpacks
     ...
-    
+
     $ cat .buildpacks
-    https://github.com/lepinsk/heroku-buildpack-audiowaveform
+    https://github.com/soomo/heroku-buildpack-audiowaveform
 
     $ heroku create --buildpack https://github.com/ddollar/heroku-buildpack-multi
 
