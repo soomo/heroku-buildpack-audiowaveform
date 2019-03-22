@@ -15,6 +15,7 @@ cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
 curl -L --silent $DOWNLOAD_URL_AUDIOWAVEFORM >> audiowaveform
+chmod +x audiowaveform
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/audiowaveform.sh"
