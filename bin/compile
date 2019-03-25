@@ -7,18 +7,17 @@ indent() {
 echo "-----> Installing audiowaveform"
 BUILD_DIR=$1
 VENDOR_DIR="vendor/audiowaveform/bin/"
-DOWNLOAD_URL_AUDIOWAVEFORM="https://soomo-packages.s3.amazonaws.com/audiowaveform"
+DOWNLOAD_URL_AUDIOWAVEFORM="https://soomo-packages.s3.amazonaws.com/audiowaveform.zip"
 
 echo "DOWNLOAD_URL_AUDIOWAVEFORM = " $DOWNLOAD_URL_AUDIOWAVEFORM | indent
 
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-curl -L --silent $DOWNLOAD_URL_AUDIOWAVEFORM >> audiowaveform
-chmod +x audiowaveform
+curl -L --silent $DOWNLOAD_URL_AUDIOWAVEFORM | unzip
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/audiowaveform.sh"
 mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:$HOME/vendor/audiowaveform/bin"' >> $PROFILE_PATH
-# echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/audiowaveform/lib"' >> $PROFILE_PATH
+echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$HOME/vendor/audiowaveform/lib"' >> $PROFILE_PATH
