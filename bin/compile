@@ -14,7 +14,9 @@ echo "DOWNLOAD_URL_AUDIOWAVEFORM = " $DOWNLOAD_URL_AUDIOWAVEFORM | indent
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
 cd $VENDOR_DIR
-curl -L --silent $DOWNLOAD_URL_AUDIOWAVEFORM | unzip
+curl -L --silent $DOWNLOAD_URL_AUDIOWAVEFORM >> audiowaveform.zip
+unzip audiowaveform.zip
+rm audiowaveform.zip
 
 echo "exporting PATH and LIBRARY_PATH" | indent
 PROFILE_PATH="$BUILD_DIR/.profile.d/audiowaveform.sh"
