@@ -7,7 +7,7 @@ indent() {
 echo "-----> Installing audiowaveform"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
-DOWNLOAD_URL_AUDIOWAVEFORM="https://soomo-packages.s3.amazonaws.com/audiowaveform.zip"
+DOWNLOAD_URL_AUDIOWAVEFORM="https://soomo-packages.s3.amazonaws.com/audiowaveform_all.zip"
 
 echo "DOWNLOAD_URL_AUDIOWAVEFORM = " $DOWNLOAD_URL_AUDIOWAVEFORM | indent
 
